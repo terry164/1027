@@ -1,0 +1,47 @@
+/* 移除 body 的預設邊距，並隱藏滾動條，確保畫布能完整填滿 */
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif; /* 設定一個預設字體 */
+}
+
+/* 側邊選單的基礎樣式 */
+#side-menu {
+  position: fixed; /* 固定位置，不隨頁面滾動 */
+  top: 0;
+  left: -350px; /* 初始位置，藏在畫面左邊外側 */
+  width: 350px; /* 選單寬度 */
+  height: 100vh; /* 選單高度與視窗同高 */
+  background-color: rgba(30, 30, 30, 0.9); /* 半透明深灰色背景 */
+  padding-top: 60px; /* 頂部留白 */
+  transition: left 0.4s ease-in-out; /* 設定 left 屬性的過渡動畫 */
+  z-index: 1000; /* 確保選單在 p5.js 畫布之上 */
+}
+
+/* 當選單擁有 'visible' class 時，將其滑入畫面中 */
+#side-menu.visible {
+  left: 0;
+}
+
+/* 選單列表樣式 */
+#side-menu ul {
+  list-style: none; /* 移除項目符號 */
+  padding: 0;
+  margin: 0;
+}
+
+/* 選單項目連結的樣式 */
+#side-menu ul li a {
+  display: block; /* 讓整個區域都可點擊 */
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none; /* 移除底線 */
+  font-size: 32px; /* 設定文字大小為 32px */
+  transition: background-color 0.3s;
+}
+
+/* 滑鼠懸停在選項上時的背景色變化 */
+#side-menu ul li a:hover {
+  background-color: #f71735; /* 使用您現有調色盤中的紅色 */
+}
